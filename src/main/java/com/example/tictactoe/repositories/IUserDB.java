@@ -45,9 +45,10 @@ public class IUserDB implements IUser {
     public void update(User user) {
         try{
             preparedStatement = conn.prepareStatement("UPDATE games WHERE id='?' SET wins='?', ties='?', loses='?'");
-            preparedStatement.setInt(1, user.getWins());
-            preparedStatement.setInt(2, user.getTies());
-            preparedStatement.setInt(3, user.getLoses());
+            preparedStatement.setInt(1, user.getId());
+            preparedStatement.setInt(2, user.getWins());
+            preparedStatement.setInt(3, user.getTies());
+            preparedStatement.setInt(4, user.getLoses());
 
             boolean result = preparedStatement.execute();
 
@@ -146,5 +147,19 @@ public class IUserDB implements IUser {
             e.printStackTrace();
         }
         return 0;
+    }
+
+    @Override
+    public boolean userExists(String username){
+        try{
+            preparedStatement = conn.prepareStatement("SELECT id FROM users WHERE username='" + username + "' LIMIT 1");
+            result = preparedStatement.executeQuery();
+
+            if(result.next())
+                return true;
+        } catch(SQLException e){
+            e.printStackTrace();
+        }
+        return false;
     }
 }

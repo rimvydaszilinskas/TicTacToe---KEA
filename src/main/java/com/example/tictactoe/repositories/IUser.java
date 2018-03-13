@@ -9,4 +9,5 @@ public interface IUser {
     User readAll(int id);
     int[] getResults(int id);
     int verifyUser(String username, String password);
+    boolean userExists(String username);
 }

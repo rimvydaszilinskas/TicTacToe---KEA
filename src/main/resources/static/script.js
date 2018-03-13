@@ -38,6 +38,7 @@ function updateScores(){
     $("#playerScore").html(score_player);
     $("#tieScore").html(score_tie);
     $("#computerScore").html(score_computer);
+
 }
 
 function resizeTable(){

@@ -1,4 +1,4 @@
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -17,11 +17,11 @@
     <div class="row">
         <div class="col" id="userTop">
             <i class="fas fa-user"></i>
-            Rimvydas Zilinskas
+            <span th:text="${player.firstname}"></span>
         </div>
         <div class="col" id="logout">
             <i class="fas fa-sign-out-alt"></i>
-            <a href="#">Logout</a>
+            <a href="/logout">Logout</a>
         </div>
     </div>
 
@@ -69,8 +69,7 @@
     </div>
 </div>
 
-<script src="script.js"></script>
-<script src="ajax.js"></script>
+<script src="script_logged.js"></script>
 
 </body>
 </html>

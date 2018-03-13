@@ -15,13 +15,8 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-4 offset-md-4">
-        <div class="alert alert-danger" role="alert" hidden>
-          The username is already taken!
-        </div>
-        <div class="alert alert-warning" role="alert" hidden>
-          Please choose a password at least 6 characters long!
-        </div>
-        <form>
+
+        <form id="register-form">
           <div class="form-group">
             <label for="firstname">First name:</label>
             <input class="form-control" type="text" name="firstname" id="firstname" required>
@@ -41,6 +36,9 @@
           <input class="btn btn-success" type="submit" value="Register"/>
           Already have an account? <a href="/login">Log in</a>
         </form>
+        <div class="alert alert-danger" role="alert" style="display: none;">
+          The username is already taken!
+        </div>
       </div>
     </div>
   </div>
