@@ -1,0 +1,77 @@
+body{
+    background-color: black;
+    color: white;
+}
+
+table{
+    width: 100%;
+}
+
+td{
+    min-width: 100px;
+    height: 100px;
+    text-align: center;
+    font-size: 4.5em;
+    font-weight: bold;
+    margin: 0 0 0 0;
+    border: solid white 3px;
+}
+
+td:hover{
+    cursor: pointer;
+}
+
+tr{
+    min-height: 100px;
+}
+
+/* first column */
+tr td:nth-of-type(1n){
+    border-left: none;
+}
+
+tr td:nth-of-type(3n){
+    border-right: none;
+}
+
+tr:first-of-type td{
+    border-top: none;
+}
+
+tr:last-of-type td{
+    border-bottom: none;
+}
+
+.score{
+    text-align: center;
+}
+
+.result{
+    text-align: center;
+}
+
+.result span{
+    display: block;
+    font-size: 1.8em;
+    font-weight: bold;
+}
+
+#userTop{
+    font-size: 1.2em;
+}
+
+#logout{
+    text-align: right;
+    font-size: 1.2em;
+}
+
+#logout a{
+    color: white;
+}
+
+@media (max-width: 458px) {
+    .align{
+        display: none;
+    }
+
+}

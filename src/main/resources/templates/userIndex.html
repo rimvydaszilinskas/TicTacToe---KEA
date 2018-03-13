@@ -1,0 +1,76 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>TicTacToe</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+</head>
+
+<body>
+<div class="container-fluid">
+
+    <div class="row">
+        <div class="col" id="userTop">
+            <i class="fas fa-user"></i>
+            Rimvydas Zilinskas
+        </div>
+        <div class="col" id="logout">
+            <i class="fas fa-sign-out-alt"></i>
+            <a href="#">Logout</a>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4 offset-md-4">
+            <table>
+                <tr>
+                    <td id="tl"></td>
+                    <td id="t"></td>
+                    <td id="tr"></td>
+                </tr>
+                <tr>
+                    <td id="ml"></td>
+                    <td id="m"></td>
+                    <td id="mr"></td>
+                </tr>
+                <tr>
+                    <td id="bl"></td>
+                    <td id="b"></td>
+                    <td id="br"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col align"></div>
+        <div class="col align"></div>
+        <div class="col align"></div>
+        <div class="col result">
+            <span>Player</span>
+            <span id="playerScore">0</span>
+        </div>
+        <div class="col result">
+            <span>Tie</span>
+            <span id="tieScore">0</span>
+        </div>
+        <div class="col result">
+            <span>Computer</span>
+            <span id="computerScore">0</span>
+        </div>
+        <div class="col align"></div>
+        <div class="col align"></div>
+        <div class="col align"></div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+<script src="ajax.js"></script>
+
+</body>
+</html>
