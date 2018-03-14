@@ -44,7 +44,7 @@ public class IUserDB implements IUser {
     @Override
     public void update(User user) {
         try{
-            preparedStatement = conn.prepareStatement("UPDATE games WHERE id='?' SET wins='?', ties='?', loses='?'");
+            preparedStatement = conn.prepareStatement("UPDATE users WHERE id='?' SET wins='?', ties='?', loses='?'");
             preparedStatement.setInt(1, user.getId());
             preparedStatement.setInt(2, user.getWins());
             preparedStatement.setInt(3, user.getTies());
@@ -82,7 +82,7 @@ public class IUserDB implements IUser {
 
     @Override
     public User readAll(int uid){
-        int id = 0, wins, loses, ties;
+        int id = 0, wins = 0, loses = 0, ties = 0;
         String firstname = "", lastname = "", username = "", password = "";
         try{
             preparedStatement = conn.prepareStatement("SELECT * FROM users WHERE id='"+ uid + "' LIMIT 1");
@@ -94,17 +94,12 @@ public class IUserDB implements IUser {
                 lastname = result.getString("lastname");
                 username = result.getString("username");
                 password = result.getString("password");
+                wins = result.getInt("wins");
+                ties = result.getInt("ties");
+                loses = result.getInt("loses");
             }
 
-            int[] results = getResults(uid);
-
-            if(results != null){
-                wins = results[0];
-                ties = results[1];
-                loses = results[2];
-                return new User(id, firstname, lastname, username, password, wins, ties, loses);
-            }
-            return new User(id, firstname, lastname, username, password);
+            return new User(id, firstname, lastname, username, password, wins, ties, loses);
 
         } catch (SQLException e){
             e.printStackTrace();

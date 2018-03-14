@@ -29,14 +29,14 @@ public class MainController {
     @GetMapping("/login")
     public String login(){
         if(userLogged)
-            return "userIndex";
+            return "redirect:/";
         return "login";
     }
 
     @GetMapping("/register")
     public String register(){
         if(userLogged) {
-            return "userIndex";
+            return "redirect:/";
         }
         return "register";
     }

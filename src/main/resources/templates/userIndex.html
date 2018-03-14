@@ -17,7 +17,7 @@
     <div class="row">
         <div class="col" id="userTop">
             <i class="fas fa-user"></i>
-            <span th:text="${player.firstname}"></span>
+            <span th:text="${player.firstname} + ' ' + ${player.lastname}"></span>
         </div>
         <div class="col" id="logout">
             <i class="fas fa-sign-out-alt"></i>
@@ -53,15 +53,15 @@
         <div class="col align"></div>
         <div class="col result">
             <span>Player</span>
-            <span id="playerScore">0</span>
+            <span id="playerScore" th:text="${player.wins}"></span>
         </div>
         <div class="col result">
             <span>Tie</span>
-            <span id="tieScore">0</span>
+            <span id="tieScore" th:text="${player.ties}"></span>
         </div>
         <div class="col result">
             <span>Computer</span>
-            <span id="computerScore">0</span>
+            <span id="computerScore" th:text="${player.loses}"></span>
         </div>
         <div class="col align"></div>
         <div class="col align"></div>
