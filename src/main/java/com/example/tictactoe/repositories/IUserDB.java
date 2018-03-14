@@ -44,15 +44,12 @@ public class IUserDB implements IUser {
     @Override
     public void update(User user) {
         try{
-            preparedStatement = conn.prepareStatement("UPDATE users WHERE id='?' SET wins='?', ties='?', loses='?'");
-            preparedStatement.setInt(1, user.getId());
-            preparedStatement.setInt(2, user.getWins());
-            preparedStatement.setInt(3, user.getTies());
-            preparedStatement.setInt(4, user.getLoses());
+            preparedStatement = conn.prepareStatement("UPDATE users SET wins='" + user.getWins() + "', ties='" + user.getTies() +
+                    "', loses='" + user.getLoses() + "' WHERE id='" + user.getId() + "';");
 
             boolean result = preparedStatement.execute();
 
-            if(result)
+            if(!result)
                 System.out.println("User update");
             else
                 System.out.println("User update error");

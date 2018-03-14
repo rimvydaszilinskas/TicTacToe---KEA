@@ -71,4 +71,14 @@ public class MainController {
         return "404";
     }
 
+    @ResponseBody
+    @PostMapping("/update")
+    public String updatePlayer(@RequestParam("wins") int wins, @RequestParam("ties") int ties, @RequestParam("loses") int loses){
+        user.setLoses(loses);
+        user.setTies(ties);
+        user.setWins(wins);
+        userDB.update(user);
+        return "OK";
+    }
+
 }
